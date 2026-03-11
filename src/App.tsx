@@ -1,10 +1,9 @@
 import { Nav } from './components/Nav'
 import { HeroSection } from './components/HeroSection'
 import { WoLichtIst } from './components/WoLichtIst'
-import { Vergangenheit } from './components/Vergangenheit'
-import { Zimbeln } from './components/Zimbeln'
-import { Vision } from './components/Vision'
-import { Gemeinschaft } from './components/Gemeinschaft'
+import { DerKreis } from './components/DerKreis'
+import { DasLeuchten } from './components/DasLeuchten'
+import { DasNetz } from './components/DasNetz'
 import { Spende } from './components/Spende'
 import { Footer } from './components/Footer'
 
@@ -13,23 +12,20 @@ export default function App() {
     <div className="relative">
       <Nav />
       <main>
-        {/* JETZT — The blazing present */}
+        {/* Hero — dark, blazing O */}
         <HeroSection />
 
-        {/* The Foundation — warm light, cream */}
+        {/* Das Licht — white, watermark, lyrical */}
         <WoLichtIst />
 
-        {/* Vergangenheit — descending into the earth */}
-        <Vergangenheit />
+        {/* Der Kreis — the practice, circle visualization */}
+        <DerKreis />
 
-        {/* Zimbeln — the practice, energetic gold */}
-        <Zimbeln />
+        {/* Das Leuchten — vision, poetic */}
+        <DasLeuchten />
 
-        {/* Vision — ascending into the future */}
-        <Vision />
-
-        {/* Gemeinschaft — the tools, community */}
-        <Gemeinschaft />
+        {/* Das Netz — infrastructure, open source */}
+        <DasNetz />
 
         {/* Spende — support the project */}
         <Spende />

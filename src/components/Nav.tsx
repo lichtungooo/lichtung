@@ -20,10 +20,10 @@ export function Nav() {
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
       style={{
         background: scrolled
-          ? 'rgba(8, 6, 16, 0.92)'
+          ? 'rgba(7, 6, 15, 0.94)'
           : 'transparent',
         backdropFilter: scrolled ? 'blur(12px)' : 'none',
-        borderBottom: scrolled ? '1px solid rgba(212, 168, 67, 0.1)' : '1px solid transparent',
+        borderBottom: scrolled ? '1px solid rgba(255,255,255,0.06)' : '1px solid transparent',
       }}
       aria-label="Hauptnavigation"
     >
@@ -32,40 +32,39 @@ export function Nav() {
         {/* Logo */}
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="flex items-center gap-2.5 bg-transparent border-none cursor-pointer"
+          className="flex items-center gap-3 bg-transparent border-none cursor-pointer"
           aria-label="Nach oben scrollen"
         >
-          <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+          {/* Small O circle */}
+          <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
             <circle
-              cx="12" cy="12" r="9"
+              cx="9" cy="9" r="7"
               fill="none"
-              stroke="rgba(212, 168, 67, 0.7)"
-              strokeWidth="1.2"
+              stroke="rgba(212, 168, 67, 0.65)"
+              strokeWidth="1"
               className="animate-breathe"
             />
-            <circle cx="12" cy="12" r="2.5" fill="rgba(212, 168, 67, 0.6)" />
           </svg>
           <span
             style={{
               fontFamily: "'Cormorant Garamond', Georgia, serif",
               fontSize: '1rem',
               fontWeight: 400,
-              letterSpacing: '0.08em',
-              color: 'rgba(212, 168, 67, 0.8)',
+              letterSpacing: '0.12em',
+              color: 'rgba(255, 248, 220, 0.75)',
             }}
           >
-            Die Lichtung
+            Lichtung
           </span>
         </button>
 
         {/* Desktop nav links */}
         <div className="hidden md:flex items-center gap-8">
           {[
-            { label: 'Konzept', id: 'wo-licht-ist' },
-            { label: 'Geschichte', id: 'vergangenheit' },
-            { label: 'Zimbeln', id: 'zimbeln' },
-            { label: 'Vision', id: 'vision' },
-            { label: 'Gemeinschaft', id: 'gemeinschaft' },
+            { label: 'Das Licht', id: 'das-licht' },
+            { label: 'Der Kreis', id: 'der-kreis' },
+            { label: 'Das Leuchten', id: 'das-leuchten' },
+            { label: 'Das Netz', id: 'das-netz' },
           ].map(link => (
             <button
               key={link.id}
@@ -73,14 +72,14 @@ export function Nav() {
               className="bg-transparent border-none cursor-pointer transition-all duration-200"
               style={{
                 fontFamily: 'Inter, sans-serif',
-                fontSize: '0.72rem',
+                fontSize: '0.68rem',
                 fontWeight: 300,
                 letterSpacing: '0.18em',
                 textTransform: 'uppercase',
-                color: 'rgba(200, 170, 110, 0.6)',
+                color: 'rgba(200, 170, 110, 0.5)',
               }}
-              onMouseEnter={e => { e.currentTarget.style.color = 'rgba(212, 168, 67, 0.9)' }}
-              onMouseLeave={e => { e.currentTarget.style.color = 'rgba(200, 170, 110, 0.6)' }}
+              onMouseEnter={e => { e.currentTarget.style.color = 'rgba(212, 168, 67, 0.85)' }}
+              onMouseLeave={e => { e.currentTarget.style.color = 'rgba(200, 170, 110, 0.5)' }}
             >
               {link.label}
             </button>
@@ -91,14 +90,14 @@ export function Nav() {
             className="transition-all duration-200"
             style={{
               fontFamily: 'Inter, sans-serif',
-              fontSize: '0.68rem',
+              fontSize: '0.65rem',
               fontWeight: 400,
               letterSpacing: '0.15em',
               textTransform: 'uppercase',
-              color: 'rgba(30, 15, 0, 0.9)',
+              color: '#0A0A0A',
               background: 'rgba(212, 168, 67, 0.8)',
               border: 'none',
-              padding: '6px 14px',
+              padding: '6px 16px',
               cursor: 'pointer',
             }}
             onMouseEnter={e => { e.currentTarget.style.background = 'rgba(212, 168, 67, 1)' }}
@@ -123,7 +122,7 @@ export function Nav() {
                 style={{
                   width: 22,
                   height: 1,
-                  background: 'rgba(212, 168, 67, 0.7)',
+                  background: 'rgba(212, 168, 67, 0.6)',
                   transformOrigin: 'center',
                   transform: menuOpen
                     ? i === 0 ? 'rotate(45deg) translateY(5px)' : i === 2 ? 'rotate(-45deg) translateY(-5px)' : 'scaleX(0)'
@@ -139,18 +138,17 @@ export function Nav() {
       <div
         className="md:hidden overflow-hidden transition-all duration-400"
         style={{
-          maxHeight: menuOpen ? '300px' : '0px',
-          background: 'rgba(8, 6, 16, 0.97)',
-          borderBottom: menuOpen ? '1px solid rgba(212, 168, 67, 0.1)' : 'none',
+          maxHeight: menuOpen ? '320px' : '0px',
+          background: 'rgba(7, 6, 15, 0.97)',
+          borderBottom: menuOpen ? '1px solid rgba(255,255,255,0.06)' : 'none',
         }}
       >
         <div className="px-6 py-4 space-y-4">
           {[
-            { label: 'Konzept', id: 'wo-licht-ist' },
-            { label: 'Geschichte', id: 'vergangenheit' },
-            { label: 'Zimbeln', id: 'zimbeln' },
-            { label: 'Vision', id: 'vision' },
-            { label: 'Gemeinschaft', id: 'gemeinschaft' },
+            { label: 'Das Licht', id: 'das-licht' },
+            { label: 'Der Kreis', id: 'der-kreis' },
+            { label: 'Das Leuchten', id: 'das-leuchten' },
+            { label: 'Das Netz', id: 'das-netz' },
             { label: 'Spenden', id: 'spende' },
           ].map(link => (
             <button
@@ -159,11 +157,11 @@ export function Nav() {
               className="block w-full text-left bg-transparent border-none cursor-pointer"
               style={{
                 fontFamily: 'Inter, sans-serif',
-                fontSize: '0.8rem',
+                fontSize: '0.75rem',
                 fontWeight: 300,
                 letterSpacing: '0.2em',
                 textTransform: 'uppercase',
-                color: 'rgba(200, 170, 110, 0.7)',
+                color: 'rgba(200, 170, 110, 0.6)',
                 padding: '4px 0',
               }}
             >

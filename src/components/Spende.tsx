@@ -17,37 +17,31 @@ export function Spende() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     if (!email || !effectiveAmount) return
-    // Placeholder — in production this would connect to payment
     setSubmitted(true)
   }
 
   return (
     <section
       id="spende"
-      className="relative py-24 md:py-36 overflow-hidden"
-      style={{
-        background: 'linear-gradient(180deg, #F8F4E8 0%, #E8D8B0 20%, #C8966A 50%, #8B4A20 80%, #4A2210 100%)',
-      }}
+      className="relative py-32 md:py-48 overflow-hidden"
+      style={{ background: '#FFFFFF' }}
     >
-      {/* Warm glow */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: 'radial-gradient(ellipse 60% 50% at 50% 40%, rgba(212, 168, 67, 0.12) 0%, transparent 70%)',
-        }}
-        aria-hidden="true"
-      />
+      <div className="relative z-10 max-w-xl mx-auto px-6">
 
-      <div className="relative z-10 max-w-2xl mx-auto px-6">
-
-        <div ref={ref} className={`section-reveal ${inView ? 'visible' : ''} text-center mb-12`}>
+        <div
+          ref={ref}
+          className={`section-reveal ${inView ? 'visible' : ''} text-center mb-14`}
+        >
+          {/* Section label */}
           <div
-            className="inline-block mb-6 px-4 py-1.5 text-xs uppercase tracking-widest"
             style={{
               fontFamily: 'Inter, sans-serif',
-              color: 'rgba(245, 230, 180, 0.6)',
-              border: '1px solid rgba(245, 230, 180, 0.2)',
-              fontWeight: 300,
+              fontSize: '0.65rem',
+              fontWeight: 400,
+              letterSpacing: '0.35em',
+              textTransform: 'uppercase',
+              color: 'rgba(0,0,0,0.35)',
+              marginBottom: '3rem',
             }}
           >
             Unterstützung
@@ -56,37 +50,47 @@ export function Spende() {
           <h2
             style={{
               fontFamily: "'Cormorant Garamond', Georgia, serif",
-              fontSize: 'clamp(2rem, 5vw, 3rem)',
+              fontSize: 'clamp(2rem, 5.5vw, 3.5rem)',
               fontWeight: 300,
-              color: 'rgba(255, 245, 210, 0.95)',
-              marginBottom: '2rem',
-              letterSpacing: '0.02em',
+              color: '#0A0A0A',
+              letterSpacing: '0.06em',
+              marginBottom: '3.5rem',
+              lineHeight: 1.1,
             }}
           >
-            Baue das Netz mit.
+            Unterstütze das Projekt.
           </h2>
 
-          <div className="space-y-4">
-            {[
-              'Wir sind ein Künstler, eine Vision und ein Entwicklerteam. Die Karte, der Kalender, das Profil — sie entstehen. Noch nicht fertig. Aber auf dem Weg.',
-              'Was fehlt: die Mittel, schneller zu gehen.',
-              'Jede Spende fließt direkt in Entwicklungszeit. In Code, der später Open Source gehört — dir, allen, der Gemeinschaft.',
-            ].map((text, i) => (
-              <p
-                key={i}
-                style={{
-                  fontFamily: 'Inter, sans-serif',
-                  fontSize: 'clamp(0.88rem, 2.2vw, 1rem)',
-                  fontWeight: i === 1 ? 400 : 300,
-                  fontStyle: i === 1 ? 'italic' : 'normal',
-                  color: i === 1 ? 'rgba(255, 240, 170, 0.9)' : 'rgba(230, 205, 160, 0.85)',
-                  lineHeight: 1.8,
-                }}
-              >
-                {text}
-              </p>
-            ))}
-          </div>
+          <p
+            style={{
+              fontFamily: "'Cormorant Garamond', Georgia, serif",
+              fontSize: 'clamp(1rem, 2.5vw, 1.3rem)',
+              fontWeight: 400,
+              color: '#2A2A2A',
+              lineHeight: 1.9,
+              marginBottom: '1.5rem',
+              letterSpacing: '0.01em',
+            }}
+          >
+            Der Code entsteht.<br />
+            Die Karte wächst.<br />
+            Das Team arbeitet.
+          </p>
+
+          <p
+            style={{
+              fontFamily: "'Cormorant Garamond', Georgia, serif",
+              fontSize: 'clamp(1rem, 2.5vw, 1.3rem)',
+              fontWeight: 400,
+              fontStyle: 'italic',
+              color: '#1A1A1A',
+              lineHeight: 1.8,
+              letterSpacing: '0.01em',
+            }}
+          >
+            Mit deiner Unterstützung leuchtet<br />
+            die Lichtung früher.
+          </p>
         </div>
 
         {/* Donation form */}
@@ -96,25 +100,19 @@ export function Spende() {
         >
           {submitted ? (
             <div
-              className="text-center py-12"
+              className="text-center py-16"
               style={{
-                background: 'rgba(212, 168, 67, 0.1)',
-                border: '1px solid rgba(212, 168, 67, 0.3)',
+                border: '1px solid rgba(0,0,0,0.1)',
               }}
             >
-              <div className="mb-4 flex justify-center">
-                <svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true">
-                  <circle cx="24" cy="24" r="20" fill="none" stroke="rgba(212, 168, 67, 0.7)" strokeWidth="1.5" className="animate-breathe" />
-                  <circle cx="24" cy="24" r="6" fill="rgba(212, 168, 67, 0.5)" />
-                </svg>
-              </div>
               <p
                 style={{
                   fontFamily: "'Cormorant Garamond', Georgia, serif",
-                  fontSize: '1.4rem',
+                  fontSize: '1.5rem',
                   fontStyle: 'italic',
-                  color: 'rgba(255, 245, 200, 0.95)',
-                  marginBottom: '0.5rem',
+                  color: '#0A0A0A',
+                  marginBottom: '0.8rem',
+                  fontWeight: 400,
                 }}
               >
                 Danke. Du bist Teil des Netzes.
@@ -122,9 +120,10 @@ export function Spende() {
               <p
                 style={{
                   fontFamily: 'Inter, sans-serif',
-                  fontSize: '0.85rem',
+                  fontSize: '0.8rem',
                   fontWeight: 300,
-                  color: 'rgba(200, 175, 130, 0.8)',
+                  color: 'rgba(0,0,0,0.4)',
+                  letterSpacing: '0.05em',
                 }}
               >
                 Wir melden uns bei {email}
@@ -133,8 +132,8 @@ export function Spende() {
           ) : (
             <form onSubmit={handleSubmit}>
               {/* Amount selection */}
-              <div className="mb-6">
-                <div className="grid grid-cols-4 gap-3 mb-3">
+              <div className="mb-5">
+                <div className="grid grid-cols-4 gap-2 mb-2">
                   {amounts.map(amount => (
                     <button
                       key={amount}
@@ -143,18 +142,19 @@ export function Spende() {
                       className="py-3 transition-all duration-200"
                       style={{
                         fontFamily: 'Inter, sans-serif',
-                        fontSize: '0.9rem',
+                        fontSize: '0.88rem',
                         fontWeight: selected === amount && !custom ? 500 : 300,
                         background: selected === amount && !custom
-                          ? 'rgba(212, 168, 67, 0.3)'
-                          : 'rgba(212, 168, 67, 0.06)',
+                          ? '#0A0A0A'
+                          : 'transparent',
                         border: selected === amount && !custom
-                          ? '1px solid rgba(212, 168, 67, 0.7)'
-                          : '1px solid rgba(212, 168, 67, 0.25)',
+                          ? '1px solid #0A0A0A'
+                          : '1px solid rgba(0,0,0,0.18)',
                         color: selected === amount && !custom
-                          ? 'rgba(255, 245, 190, 0.95)'
-                          : 'rgba(220, 190, 130, 0.8)',
+                          ? '#FFFFFF'
+                          : '#0A0A0A',
                         cursor: 'pointer',
+                        letterSpacing: '0.05em',
                       }}
                     >
                       {amount} €
@@ -173,20 +173,21 @@ export function Spende() {
                     className="w-full pr-8"
                     style={{
                       fontFamily: 'Inter, sans-serif',
-                      fontSize: '0.9rem',
+                      fontSize: '0.88rem',
                       fontWeight: 300,
-                      background: 'rgba(212, 168, 67, 0.06)',
-                      border: custom ? '1px solid rgba(212, 168, 67, 0.7)' : '1px solid rgba(212, 168, 67, 0.25)',
-                      color: 'rgba(240, 215, 150, 0.9)',
+                      background: 'transparent',
+                      border: custom ? '1px solid #0A0A0A' : '1px solid rgba(0,0,0,0.18)',
+                      color: '#0A0A0A',
                       padding: '12px 16px',
                       outline: 'none',
+                      letterSpacing: '0.03em',
                     }}
-                    onFocus={e => { e.currentTarget.style.borderColor = 'rgba(212, 168, 67, 0.6)' }}
-                    onBlur={e => { if (!custom) e.currentTarget.style.borderColor = 'rgba(212, 168, 67, 0.25)' }}
+                    onFocus={e => { e.currentTarget.style.borderColor = '#0A0A0A' }}
+                    onBlur={e => { if (!custom) e.currentTarget.style.borderColor = 'rgba(0,0,0,0.18)' }}
                   />
                   <span
                     className="absolute right-4 top-1/2 -translate-y-1/2"
-                    style={{ color: 'rgba(212, 168, 67, 0.5)', fontSize: '0.9rem' }}
+                    style={{ color: 'rgba(0,0,0,0.35)', fontSize: '0.88rem' }}
                     aria-hidden="true"
                   >
                     €
@@ -195,7 +196,7 @@ export function Spende() {
               </div>
 
               {/* Email */}
-              <div className="mb-6">
+              <div className="mb-5">
                 <input
                   type="email"
                   placeholder="Deine E-Mail-Adresse"
@@ -205,16 +206,17 @@ export function Spende() {
                   className="w-full"
                   style={{
                     fontFamily: 'Inter, sans-serif',
-                    fontSize: '0.9rem',
+                    fontSize: '0.88rem',
                     fontWeight: 300,
-                    background: 'rgba(212, 168, 67, 0.06)',
-                    border: '1px solid rgba(212, 168, 67, 0.25)',
-                    color: 'rgba(240, 215, 150, 0.9)',
+                    background: 'transparent',
+                    border: '1px solid rgba(0,0,0,0.18)',
+                    color: '#0A0A0A',
                     padding: '14px 16px',
                     outline: 'none',
+                    letterSpacing: '0.03em',
                   }}
-                  onFocus={e => { e.currentTarget.style.borderColor = 'rgba(212, 168, 67, 0.6)' }}
-                  onBlur={e => { e.currentTarget.style.borderColor = 'rgba(212, 168, 67, 0.25)' }}
+                  onFocus={e => { e.currentTarget.style.borderColor = '#0A0A0A' }}
+                  onBlur={e => { e.currentTarget.style.borderColor = 'rgba(0,0,0,0.18)' }}
                 />
               </div>
 
@@ -224,65 +226,59 @@ export function Spende() {
                 className="w-full py-4 transition-all duration-200"
                 style={{
                   fontFamily: 'Inter, sans-serif',
-                  fontSize: '0.9rem',
+                  fontSize: '0.8rem',
                   fontWeight: 500,
-                  letterSpacing: '0.1em',
+                  letterSpacing: '0.18em',
                   textTransform: 'uppercase',
-                  background: effectiveAmount && email ? 'rgba(212, 168, 67, 0.9)' : 'rgba(212, 168, 67, 0.3)',
-                  color: effectiveAmount && email ? '#1a0f00' : 'rgba(212, 168, 67, 0.5)',
+                  background: effectiveAmount && email ? '#0A0A0A' : 'rgba(0,0,0,0.08)',
+                  color: effectiveAmount && email ? '#FFFFFF' : 'rgba(0,0,0,0.3)',
                   border: 'none',
                   cursor: effectiveAmount && email ? 'pointer' : 'default',
                 }}
                 onMouseEnter={e => {
                   if (effectiveAmount && email) {
-                    e.currentTarget.style.background = 'rgba(212, 168, 67, 1)'
+                    e.currentTarget.style.background = '#333333'
                   }
                 }}
                 onMouseLeave={e => {
                   if (effectiveAmount && email) {
-                    e.currentTarget.style.background = 'rgba(212, 168, 67, 0.9)'
+                    e.currentTarget.style.background = '#0A0A0A'
                   }
                 }}
               >
-                {effectiveAmount ? `${effectiveAmount} € spenden` : 'Betrag auswählen'}
+                {effectiveAmount ? `${effectiveAmount} € Spenden` : 'Betrag auswählen'}
               </button>
             </form>
           )}
 
-          {/* Dev team note */}
+          {/* Note */}
           <p
-            className="mt-6 text-center"
+            className="mt-8 text-center"
             style={{
               fontFamily: 'Inter, sans-serif',
-              fontSize: '0.8rem',
+              fontSize: '0.72rem',
               fontWeight: 300,
-              color: 'rgba(190, 155, 100, 0.6)',
+              color: 'rgba(0,0,0,0.35)',
               lineHeight: 1.6,
+              letterSpacing: '0.04em',
             }}
           >
-            Wir haben ein Entwicklerteam, das an dieser Infrastruktur arbeitet. Mit deiner Unterstützung machen wir die weltweite Lichtungs-Community sichtbar.
+            Alle Mittel fließen in die Open-Source-Entwicklung.
           </p>
 
-          {/* Documenta badge */}
-          <div
-            className="documenta-badge mt-8 mx-auto text-center px-5 py-3"
-            style={{ maxWidth: 360 }}
+          <p
+            className="mt-2 text-center"
+            style={{
+              fontFamily: 'Inter, sans-serif',
+              fontSize: '0.65rem',
+              fontWeight: 300,
+              color: 'rgba(0,0,0,0.2)',
+              letterSpacing: '0.2em',
+              textTransform: 'uppercase',
+            }}
           >
-            <p
-              style={{
-                fontFamily: 'Inter, sans-serif',
-                fontSize: '0.75rem',
-                fontWeight: 300,
-                color: 'rgba(212, 168, 67, 0.7)',
-                letterSpacing: '0.05em',
-                lineHeight: 1.6,
-              }}
-            >
-              Die Lichtung bewirbt sich für die{' '}
-              <span style={{ fontWeight: 500 }}>documenta 16</span>
-              {' '}in Kassel 2027.
-            </p>
-          </div>
+            documenta 16 · Kassel · 2027
+          </p>
         </div>
       </div>
     </section>

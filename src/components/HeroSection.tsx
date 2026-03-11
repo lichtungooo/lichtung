@@ -1,16 +1,11 @@
 import { BlazingO } from './BlazingO'
 
 export function HeroSection() {
-  const scrollToNext = () => {
-    const next = document.getElementById('wo-licht-ist')
-    next?.scrollIntoView({ behavior: 'smooth' })
-  }
-
   return (
     <section
       id="hero"
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
-      style={{ background: '#080610' }}
+      style={{ background: '#07060F' }}
     >
       {/* Deep space background texture */}
       <div
@@ -35,7 +30,7 @@ export function HeroSection() {
           className="hero-title mb-2 tracking-[0.5em] text-xs uppercase"
           style={{ color: 'rgba(212, 168, 67, 0.6)', fontFamily: 'Inter, sans-serif', fontWeight: 300 }}
         >
-          O — der Kreis
+          Ein Kunstprojekt von O
         </div>
 
         {/* The blazing O */}
@@ -45,176 +40,88 @@ export function HeroSection() {
 
         {/* Title */}
         <h1
-          className="hero-tagline font-display text-shadow-glow"
+          className="hero-tagline"
           style={{
             fontFamily: "'Cormorant Garamond', Georgia, serif",
-            fontSize: 'clamp(3rem, 8vw, 6rem)',
+            fontSize: 'clamp(3.5rem, 10vw, 7rem)',
             fontWeight: 300,
-            letterSpacing: '0.08em',
+            letterSpacing: '0.12em',
             color: 'rgba(255, 250, 220, 0.95)',
-            lineHeight: 1.05,
-            marginBottom: '0.3em',
+            lineHeight: 1,
+            marginBottom: '0.5em',
+            textShadow: '0 0 60px rgba(212, 168, 67, 0.25)',
           }}
         >
-          Die Lichtung
+          Lichtung
         </h1>
-
-        {/* Subtitle */}
-        <div
-          className="hero-text"
-          style={{
-            fontFamily: 'Inter, sans-serif',
-            fontSize: 'clamp(0.7rem, 2vw, 0.85rem)',
-            fontWeight: 300,
-            letterSpacing: '0.4em',
-            color: 'rgba(212, 168, 67, 0.75)',
-            textTransform: 'uppercase',
-            marginBottom: '2rem',
-          }}
-        >
-          Verbindungskunst
-        </div>
-
-        {/* Divider */}
-        <div
-          className="hero-text"
-          style={{
-            width: 40,
-            height: 1,
-            background: 'linear-gradient(90deg, transparent, rgba(212, 168, 67, 0.5), transparent)',
-            marginBottom: '2rem',
-          }}
-          aria-hidden="true"
-        />
 
         {/* Tagline */}
         <p
-          className="hero-text font-display"
+          className="hero-text"
           style={{
             fontFamily: "'Cormorant Garamond', Georgia, serif",
-            fontSize: 'clamp(1.1rem, 3vw, 1.6rem)',
+            fontSize: 'clamp(1rem, 2.8vw, 1.5rem)',
             fontWeight: 400,
             fontStyle: 'italic',
-            color: 'rgba(245, 235, 195, 0.9)',
-            marginBottom: '1rem',
-            letterSpacing: '0.02em',
-          }}
-        >
-          "Wir bringen die Welt zum Leuchten."
-        </p>
-
-        {/* Short text */}
-        <p
-          className="hero-ctas"
-          style={{
-            fontFamily: 'Inter, sans-serif',
-            fontSize: 'clamp(0.85rem, 2.2vw, 1rem)',
-            fontWeight: 300,
-            color: 'rgba(200, 185, 155, 0.75)',
-            maxWidth: 420,
-            lineHeight: 1.7,
+            color: 'rgba(245, 235, 195, 0.85)',
             marginBottom: '3rem',
-            letterSpacing: '0.02em',
+            letterSpacing: '0.03em',
           }}
         >
-          Ein Kreis von Menschen. Ein gemeinsamer Impuls.
-          <br />
-          Ein weltweites Netz aus Licht.
+          Wir bringen die Welt zum Leuchten.
         </p>
 
-        {/* CTAs */}
-        <div className="hero-ctas flex flex-col sm:flex-row gap-4 items-center">
+        {/* Single CTA */}
+        <div className="hero-ctas">
           <button
-            onClick={() => document.getElementById('vergangenheit')?.scrollIntoView({ behavior: 'smooth' })}
-            className="group relative overflow-hidden px-8 py-3 transition-all duration-300"
+            onClick={() => document.getElementById('das-licht')?.scrollIntoView({ behavior: 'smooth' })}
+            className="transition-all duration-300"
             style={{
-              border: '1px solid rgba(212, 168, 67, 0.5)',
+              border: '1px solid rgba(212, 168, 67, 0.45)',
               color: 'rgba(245, 230, 180, 0.9)',
               fontFamily: 'Inter, sans-serif',
-              fontSize: '0.85rem',
+              fontSize: '0.8rem',
               fontWeight: 300,
-              letterSpacing: '0.15em',
+              letterSpacing: '0.25em',
               textTransform: 'uppercase',
-              background: 'rgba(212, 168, 67, 0.06)',
+              background: 'transparent',
               cursor: 'pointer',
+              padding: '14px 40px',
             }}
             onMouseEnter={e => {
-              const el = e.currentTarget
-              el.style.background = 'rgba(212, 168, 67, 0.15)'
-              el.style.borderColor = 'rgba(212, 168, 67, 0.8)'
-              el.style.color = 'rgba(255, 245, 200, 1)'
+              e.currentTarget.style.background = 'rgba(212, 168, 67, 0.1)'
+              e.currentTarget.style.borderColor = 'rgba(212, 168, 67, 0.7)'
             }}
             onMouseLeave={e => {
-              const el = e.currentTarget
-              el.style.background = 'rgba(212, 168, 67, 0.06)'
-              el.style.borderColor = 'rgba(212, 168, 67, 0.5)'
-              el.style.color = 'rgba(245, 230, 180, 0.9)'
+              e.currentTarget.style.background = 'transparent'
+              e.currentTarget.style.borderColor = 'rgba(212, 168, 67, 0.45)'
             }}
           >
-            Die Geschichte entdecken
-          </button>
-
-          <button
-            onClick={() => document.getElementById('spende')?.scrollIntoView({ behavior: 'smooth' })}
-            className="px-8 py-3 transition-all duration-300"
-            style={{
-              background: 'rgba(212, 168, 67, 0.88)',
-              color: '#1a0f00',
-              fontFamily: 'Inter, sans-serif',
-              fontSize: '0.85rem',
-              fontWeight: 500,
-              letterSpacing: '0.15em',
-              textTransform: 'uppercase',
-              border: '1px solid transparent',
-              cursor: 'pointer',
-            }}
-            onMouseEnter={e => {
-              e.currentTarget.style.background = 'rgba(212, 168, 67, 1)'
-              e.currentTarget.style.transform = 'translateY(-1px)'
-            }}
-            onMouseLeave={e => {
-              e.currentTarget.style.background = 'rgba(212, 168, 67, 0.88)'
-              e.currentTarget.style.transform = 'translateY(0)'
-            }}
-          >
-            Lichtung unterstützen
+            Erkunden
           </button>
         </div>
       </div>
 
       {/* Scroll hint */}
-      <button
-        onClick={scrollToNext}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 scroll-hint flex flex-col items-center gap-2 cursor-pointer bg-transparent border-none"
-        aria-label="Nach unten scrollen"
+      <div
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 scroll-hint flex flex-col items-center gap-2"
+        aria-hidden="true"
       >
-        <span
-          style={{
-            fontFamily: 'Inter, sans-serif',
-            fontSize: '0.65rem',
-            letterSpacing: '0.3em',
-            textTransform: 'uppercase',
-            color: 'rgba(212, 168, 67, 0.4)',
-          }}
-        >
-          entdecken
-        </span>
-        <svg width="20" height="28" viewBox="0 0 20 28" fill="none" aria-hidden="true">
-          <line x1="10" y1="0" x2="10" y2="20" stroke="rgba(212, 168, 67, 0.4)" strokeWidth="1" />
-          <polyline points="4,14 10,22 16,14" fill="none" stroke="rgba(212, 168, 67, 0.4)" strokeWidth="1" />
+        <svg width="1" height="40" viewBox="0 0 1 40">
+          <line x1="0.5" y1="0" x2="0.5" y2="40" stroke="rgba(212, 168, 67, 0.3)" strokeWidth="1" />
         </svg>
-      </button>
+      </div>
     </section>
   )
 }
 
 function StarField() {
-  const stars = Array.from({ length: 80 }, (_, i) => ({
+  const stars = Array.from({ length: 60 }, (_, i) => ({
     id: i,
     x: Math.random() * 100,
     y: Math.random() * 100,
-    size: Math.random() * 1.5 + 0.3,
-    opacity: Math.random() * 0.4 + 0.05,
+    size: Math.random() * 1.2 + 0.3,
+    opacity: Math.random() * 0.3 + 0.05,
     delay: Math.random() * 5,
   }))
 
