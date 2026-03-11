@@ -3,7 +3,7 @@ import { HeroSection } from './components/HeroSection'
 import { WoLichtIst } from './components/WoLichtIst'
 import { DerKreis } from './components/DerKreis'
 
-import { DasNetz } from './components/DasNetz'
+
 import { Spende } from './components/Spende'
 import { Footer } from './components/Footer'
 
@@ -24,8 +24,6 @@ export default function App() {
 
 
 
-
-        <DasNetz />
 
 
         <Spende />

@@ -24,7 +24,7 @@ export function Spende() {
     <section
       id="entzuenden"
       className="relative py-32 md:py-48 overflow-hidden"
-      style={{ background: '#FFFFFF' }}
+      style={{ background: '#FDFBF7' }}
     >
       <div className="relative z-10 max-w-xl mx-auto px-6">
 
@@ -39,7 +39,7 @@ export function Spende() {
               fontWeight: 400,
               letterSpacing: '0.35em',
               textTransform: 'uppercase',
-              color: 'rgba(0,0,0,0.3)',
+              color: 'rgba(0,0,0,0.28)',
               marginBottom: '3rem',
             }}
           >
@@ -57,10 +57,9 @@ export function Spende() {
               lineHeight: 1,
             }}
           >
-            Entzünden.
+            Leuchten.
           </h2>
 
-          {/* The why — Real Life Stack context */}
           <p
             style={{
               fontFamily: "'Cormorant Garamond', Georgia, serif",
@@ -72,8 +71,8 @@ export function Spende() {
               letterSpacing: '0.01em',
             }}
           >
-            Damit Lichtungen überall auf der Erde entstehen,
-            braucht es Werkzeuge.
+            Lichtung entsteht. Als Kunstprojekt,
+            als Gemeinschaft, als lebende Karte der Erde.
           </p>
 
           <p
@@ -87,9 +86,9 @@ export function Spende() {
               letterSpacing: '0.01em',
             }}
           >
-            Ein Team baut eine offene Plattform:<br />
-            Karte. Kalender. Vertrauensnetzwerk.<br />
-            Menschen finden sich, begegnen sich, wirken zusammen.
+            Damit Menschen sich finden.<br />
+            Karte. Kalender. Community.<br />
+            Werkzeuge, die zeigen: hier leuchtet es.
           </p>
 
           <p
@@ -100,27 +99,12 @@ export function Spende() {
               fontStyle: 'italic',
               color: '#1A1A1A',
               lineHeight: 1.9,
-              marginBottom: '2rem',
-              letterSpacing: '0.01em',
-            }}
-          >
-            Das Real Life Stack ist Open Source.<br />
-            Es gehört allen. Es dient jedem Kreis auf der Erde.
-          </p>
-
-          <p
-            style={{
-              fontFamily: "'Cormorant Garamond', Georgia, serif",
-              fontSize: 'clamp(1.1rem, 2.8vw, 1.45rem)',
-              fontWeight: 400,
-              color: '#0A0A0A',
-              lineHeight: 1.8,
               marginBottom: '4rem',
               letterSpacing: '0.01em',
             }}
           >
-            Jeder Beitrag entzündet<br />
-            eine weitere Lichtung.
+            Ein Open-Source-Projekt trägt die Infrastruktur.<br />
+            Jeder Beitrag trägt das Licht weiter.
           </p>
         </div>
 
@@ -256,7 +240,7 @@ export function Spende() {
                 onMouseEnter={e => { if (effectiveAmount && email) e.currentTarget.style.background = '#333333' }}
                 onMouseLeave={e => { if (effectiveAmount && email) e.currentTarget.style.background = '#0A0A0A' }}
               >
-                {effectiveAmount ? `${effectiveAmount} € Entzünden` : 'Betrag auswählen'}
+                {effectiveAmount ? `${effectiveAmount} € Leuchten` : 'Betrag auswählen'}
               </button>
             </form>
           )}

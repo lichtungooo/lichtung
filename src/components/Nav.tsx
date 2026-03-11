@@ -58,7 +58,6 @@ export function Nav() {
           {[
             { label: 'Licht', id: 'das-licht' },
             { label: 'Kreis', id: 'der-kreis' },
-            { label: 'Netzwerk', id: 'das-netz' },
           ].map(link => (
             <button
               key={link.id}
@@ -97,7 +96,7 @@ export function Nav() {
             onMouseEnter={e => { e.currentTarget.style.background = '#2A2A2A' }}
             onMouseLeave={e => { e.currentTarget.style.background = '#0A0A0A' }}
           >
-            Entzünden
+            Leuchten
           </button>
         </div>
 
@@ -141,8 +140,7 @@ export function Nav() {
           {[
             { label: 'Licht', id: 'das-licht' },
             { label: 'Kreis', id: 'der-kreis' },
-            { label: 'Netzwerk', id: 'das-netz' },
-            { label: 'Entzünden', id: 'entzuenden' },
+            { label: 'Leuchten', id: 'entzuenden' },
           ].map(link => (
             <button
               key={link.id}

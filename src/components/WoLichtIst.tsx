@@ -1,8 +1,57 @@
+import { useState } from 'react'
 import { useInView } from '../hooks/useInView'
 
+const GESCHICHTE = `Am Anfang war das Leuchten.
+
+Alle Kulturen der Erde erinnern sich an dasselbe — eine Zeit, in der die Menschen in Verbindung waren. Mit der Erde. Miteinander. Mit dem, was größer ist als sie selbst.
+
+Die vedischen Schriften nennen es das Satya Yuga — das Zeitalter der Wahrheit. Die Griechen das Goldene Zeitalter. Die Kelten Tír na nÓg. Die Germanen Asgard. Die Hopi die Erste Welt. Die Slawen Irij — den Paradiesgarten.
+
+Alle Völker. Alle Zeiten. Dieselbe Erinnerung: ein Leuchten.
+
+Eine Zeit, in der Menschen zusammen unter dem Himmel tanzten, ihre Stimmen erhoben, und das Echo der Erde zurückkam — warm, lebendig, voller Antwort. In der Heilung das Natürlichste der Welt war. In der Gemeinschaft Freude war. In der das Herz wusste, wozu es schlägt.
+
+Das ist Erinnerung. Und Erinnerungen werden wach.
+
+Dann — mit Geduld, über Generationen hinweg — kam der Schatten.
+
+Die Zeit wurde gepflanzt. Vorher war Zeit zirkulär — wie die Jahreszeiten, wie Atem, wie das Pulsieren der Erde. Dann wurde Zeit linear. Ein Pfeil. Anfang und Ende.
+
+Mit linearer Zeit kamen Schulden. Mit Schulden die Angst. Mit Angst der Gehorsam.
+
+Die Verbindung wurde gekappt. Das Lebendige, das frei durch die Menschen geflossen war — eingedämmt. In Herzen, die lernten, sich zu verschließen.
+
+Das vollendete Gefängnis braucht keine sichtbaren Mauern. Es besteht aus Überzeugungen. Aus Geschichten, die man erzählte, bevor man alt genug war, sie zu prüfen. Aus einer Wirtschaft, die Zeit gegen Überleben tauscht.
+
+Und doch: das Licht lebte weiter.
+
+In jedem Menschen. In stillen Momenten, wenn der Körper atmet und die Gedanken schweigen. In echtem Lachen, das den ganzen Körper schüttelt. In Tränen, die kommen, wenn zwei Menschen sich wirklich begegnen. Im Staunen vor dem Sternenhimmel.
+
+Mutter Erde wartete. Geduldig. Sie vergisst nicht.
+
+Die Erde selbst erinnert sich an das Goldene Sein — an die Zeit, als Menschen und Land ein Puls waren. Diese Erinnerung ist in der Erde gespeichert, in Steinen, in Quellen, in heiligen Orten aller Kulturen. Sie wartet auf Menschen, die sich wieder erinnern.
+
+Heute treffen sich Menschen wieder.
+
+In kleinen Kreisen, unter freiem Himmel. Sie bringen ihre Stimmen mit. Ihr Lachen. Ihre Stille.
+
+Und die Erde antwortet.
+
+Wo zwei Menschen zusammenkommen — in echter Offenheit, in Freude, in gemeinsamem Schweigen — entsteht ein drittes. Ein Feld. Etwas, das größer ist als beide.
+
+Der Kreis ist die älteste Form dieser Verbindung.
+
+Leuchtende Felder auf der Erde — dort, wo Menschen zusammengekommen waren. Wie diese Punkte sich ausbreiteten. Wie das Licht sich von Ort zu Ort bewegte, sich berührte, sich ineinander webte. Wie ein lebendes Netz aus Licht, das immer dichter wurde, immer heller.
+
+Das ist die Lichtung.
+
+Wo Licht ist — gibt es keinen Schatten.
+
+Denn Schatten ist das Fehlen von Licht, weiter nichts. Er hat keine eigene Substanz. Er verschwindet — einfach, unweigerlich — wenn das Licht kommt.`
+
 export function WoLichtIst() {
-  const { ref, inView } = useInView(0.1)
-  const { ref: ref2, inView: inView2 } = useInView(0.08)
+  const [open, setOpen] = useState(false)
+  const { ref, inView } = useInView(0.08)
 
   return (
     <section
@@ -10,31 +59,32 @@ export function WoLichtIst() {
       className="relative py-32 md:py-48 overflow-hidden"
       style={{ background: '#FFFFFF' }}
     >
-      {/* Watermark — atmospheric background text */}
+      {/* Background: full text as atmospheric texture */}
       <div
-        className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden"
+        className="absolute inset-0 pointer-events-none overflow-hidden"
         aria-hidden="true"
+        style={{ padding: '4rem 3rem' }}
       >
-        <span
+        <p
           style={{
             fontFamily: "'Cormorant Garamond', Georgia, serif",
-            fontSize: 'clamp(5vw, 8vw, 10vw)',
+            fontSize: 'clamp(0.55rem, 1.1vw, 0.75rem)',
             fontWeight: 300,
-            fontStyle: 'italic',
-            color: 'rgba(0,0,0,0.035)',
-            whiteSpace: 'nowrap',
-            letterSpacing: '0.02em',
+            color: 'rgba(0,0,0,0.045)',
+            lineHeight: 1.85,
+            letterSpacing: '0.01em',
+            columnCount: 3,
+            columnGap: '3rem',
+            whiteSpace: 'pre-wrap',
             userSelect: 'none',
-            lineHeight: 1,
           }}
         >
-          Wo Licht ist, gibt es keinen Schatten.
-        </span>
+          {GESCHICHTE}
+        </p>
       </div>
 
       <div className="relative z-10 max-w-2xl mx-auto px-6 text-center">
 
-        {/* Lyrical opening */}
         <div
           ref={ref}
           className={`section-reveal ${inView ? 'visible' : ''}`}
@@ -84,7 +134,6 @@ export function WoLichtIst() {
             Das Licht war immer da.
           </p>
 
-          {/* Divider */}
           <div
             style={{
               width: 1,
@@ -95,7 +144,6 @@ export function WoLichtIst() {
             aria-hidden="true"
           />
 
-          {/* Main quote */}
           <blockquote
             style={{
               fontFamily: "'Cormorant Garamond', Georgia, serif",
@@ -110,28 +158,6 @@ export function WoLichtIst() {
           >
             „Wo Licht ist, gibt es keinen Schatten."
           </blockquote>
-        </div>
-
-        {/* Brief expansion */}
-        <div
-          ref={ref2}
-          className={`section-reveal section-reveal-delay-1 ${inView2 ? 'visible' : ''}`}
-        >
-          <p
-            style={{
-              fontFamily: "'Cormorant Garamond', Georgia, serif",
-              fontSize: 'clamp(1rem, 2.4vw, 1.25rem)',
-              fontWeight: 400,
-              color: '#333333',
-              lineHeight: 1.9,
-              marginBottom: '2rem',
-              letterSpacing: '0.01em',
-            }}
-          >
-            Alle Kulturen der Erde erinnern sich an dasselbe: eine Zeit,
-            in der die Menschen in Verbindung waren.
-            Mit der Erde, miteinander, mit dem Größeren.
-          </p>
 
           <p
             style={{
@@ -140,26 +166,77 @@ export function WoLichtIst() {
               fontWeight: 400,
               color: '#333333',
               lineHeight: 1.9,
-              marginBottom: '2rem',
+              marginBottom: '3rem',
               letterSpacing: '0.01em',
             }}
           >
-            Das ist Erinnerung. Und Erinnerungen werden wach.
+            Eine Geschichte des Lichts — von der Erinnerung aller Völker,
+            vom Schatten, der kam, und von Mutter Erde, die wartet.
           </p>
 
-          <p
+          {/* CTA button */}
+          <button
+            onClick={() => setOpen(!open)}
+            className="transition-all duration-300"
             style={{
-              fontFamily: "'Cormorant Garamond', Georgia, serif",
-              fontSize: 'clamp(1.05rem, 2.5vw, 1.35rem)',
+              fontFamily: 'Inter, sans-serif',
+              fontSize: '0.65rem',
               fontWeight: 400,
-              fontStyle: 'italic',
-              color: '#1A1A1A',
-              lineHeight: 1.8,
-              letterSpacing: '0.01em',
+              letterSpacing: '0.22em',
+              textTransform: 'uppercase',
+              color: 'rgba(10, 10, 10, 0.45)',
+              background: 'transparent',
+              border: '1px solid rgba(0,0,0,0.15)',
+              padding: '10px 24px',
+              cursor: 'pointer',
+            }}
+            onMouseEnter={e => {
+              e.currentTarget.style.color = 'rgba(10, 10, 10, 0.85)'
+              e.currentTarget.style.borderColor = 'rgba(0,0,0,0.45)'
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.color = 'rgba(10, 10, 10, 0.45)'
+              e.currentTarget.style.borderColor = 'rgba(0,0,0,0.15)'
             }}
           >
-            Der Kreis ist die älteste Form dieser Verbindung.
-          </p>
+            {open ? 'Schließen' : 'Die Geschichte'}
+          </button>
+
+          {/* Expandable full text */}
+          <div
+            style={{
+              maxHeight: open ? '9999px' : '0px',
+              overflow: 'hidden',
+              transition: 'max-height 0.8s ease',
+              marginTop: open ? '4rem' : 0,
+            }}
+          >
+            <div
+              style={{
+                textAlign: 'left',
+                borderTop: '1px solid rgba(0,0,0,0.06)',
+                paddingTop: '3rem',
+              }}
+            >
+              {GESCHICHTE.split('\n\n').map((paragraph, i) => (
+                <p
+                  key={i}
+                  style={{
+                    fontFamily: "'Cormorant Garamond', Georgia, serif",
+                    fontSize: 'clamp(1rem, 2.4vw, 1.2rem)',
+                    fontWeight: 400,
+                    color: paragraph.startsWith('Wo Licht') ? '#0A0A0A' : '#2A2A2A',
+                    fontStyle: paragraph.startsWith('Wo Licht') || paragraph.startsWith('Das ist Erinnerung') ? 'italic' : 'normal',
+                    lineHeight: 1.9,
+                    marginBottom: '1.8rem',
+                    letterSpacing: '0.01em',
+                  }}
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
