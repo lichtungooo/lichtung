@@ -5,96 +5,76 @@ export function HeroSection() {
     <section
       id="hero"
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
-      style={{ background: '#07060F' }}
+      style={{ background: '#FFFFFF' }}
     >
-      {/* Deep space background texture */}
+      {/* Subtle warm radiance */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: `
-            radial-gradient(ellipse 80% 60% at 50% 50%, rgba(212, 168, 67, 0.04) 0%, transparent 70%),
-            radial-gradient(ellipse 40% 40% at 30% 70%, rgba(80, 40, 10, 0.08) 0%, transparent 60%),
-            radial-gradient(ellipse 40% 40% at 70% 30%, rgba(60, 30, 80, 0.06) 0%, transparent 60%)
-          `,
+          background: 'radial-gradient(ellipse 55% 55% at 50% 48%, rgba(212, 168, 67, 0.09) 0%, transparent 70%)',
         }}
         aria-hidden="true"
       />
 
-      {/* Subtle star field */}
-      <StarField />
-
-      {/* Main content */}
       <div className="relative z-10 flex flex-col items-center text-center px-6">
-        {/* Artist mark */}
-        <div
-          className="hero-title mb-2 tracking-[0.5em] text-xs uppercase"
-          style={{ color: 'rgba(212, 168, 67, 0.6)', fontFamily: 'Inter, sans-serif', fontWeight: 300 }}
-        >
-          Ein Kunstprojekt von O
+        <div className="hero-subtitle mb-8">
+          <BlazingO size={260} />
         </div>
 
-        {/* The blazing O */}
-        <div className="hero-subtitle my-6 md:my-8">
-          <BlazingO size={280} />
-        </div>
-
-        {/* Title */}
         <h1
           className="hero-tagline"
           style={{
             fontFamily: "'Cormorant Garamond', Georgia, serif",
-            fontSize: 'clamp(3.5rem, 10vw, 7rem)',
+            fontSize: 'clamp(3rem, 9vw, 6.5rem)',
             fontWeight: 300,
-            letterSpacing: '0.12em',
-            color: 'rgba(255, 250, 220, 0.95)',
+            letterSpacing: '0.35em',
+            textTransform: 'uppercase',
+            color: '#0A0A0A',
             lineHeight: 1,
-            marginBottom: '0.5em',
-            textShadow: '0 0 60px rgba(212, 168, 67, 0.25)',
+            marginBottom: '1.2rem',
           }}
         >
           Lichtung
         </h1>
 
-        {/* Tagline */}
         <p
           className="hero-text"
           style={{
             fontFamily: "'Cormorant Garamond', Georgia, serif",
-            fontSize: 'clamp(1rem, 2.8vw, 1.5rem)',
+            fontSize: 'clamp(1rem, 2.5vw, 1.45rem)',
             fontWeight: 400,
             fontStyle: 'italic',
-            color: 'rgba(245, 235, 195, 0.85)',
-            marginBottom: '3rem',
-            letterSpacing: '0.03em',
+            color: 'rgba(10, 10, 10, 0.45)',
+            marginBottom: '3.5rem',
+            letterSpacing: '0.04em',
           }}
         >
-          Wir bringen die Welt zum Leuchten.
+          Die Welt leuchtet.
         </p>
 
-        {/* Single CTA */}
         <div className="hero-ctas">
           <button
             onClick={() => document.getElementById('das-licht')?.scrollIntoView({ behavior: 'smooth' })}
             className="transition-all duration-300"
             style={{
-              border: '1px solid rgba(212, 168, 67, 0.45)',
-              color: 'rgba(245, 230, 180, 0.9)',
+              border: '1px solid rgba(10, 10, 10, 0.22)',
+              color: 'rgba(10, 10, 10, 0.55)',
               fontFamily: 'Inter, sans-serif',
-              fontSize: '0.8rem',
+              fontSize: '0.72rem',
               fontWeight: 300,
-              letterSpacing: '0.25em',
+              letterSpacing: '0.3em',
               textTransform: 'uppercase',
               background: 'transparent',
               cursor: 'pointer',
-              padding: '14px 40px',
+              padding: '13px 44px',
             }}
             onMouseEnter={e => {
-              e.currentTarget.style.background = 'rgba(212, 168, 67, 0.1)'
-              e.currentTarget.style.borderColor = 'rgba(212, 168, 67, 0.7)'
+              e.currentTarget.style.borderColor = '#0A0A0A'
+              e.currentTarget.style.color = '#0A0A0A'
             }}
             onMouseLeave={e => {
-              e.currentTarget.style.background = 'transparent'
-              e.currentTarget.style.borderColor = 'rgba(212, 168, 67, 0.45)'
+              e.currentTarget.style.borderColor = 'rgba(10, 10, 10, 0.22)'
+              e.currentTarget.style.color = 'rgba(10, 10, 10, 0.55)'
             }}
           >
             Erkunden
@@ -102,47 +82,14 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Scroll hint */}
       <div
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 scroll-hint flex flex-col items-center gap-2"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 scroll-hint flex flex-col items-center"
         aria-hidden="true"
       >
-        <svg width="1" height="40" viewBox="0 0 1 40">
-          <line x1="0.5" y1="0" x2="0.5" y2="40" stroke="rgba(212, 168, 67, 0.3)" strokeWidth="1" />
+        <svg width="1" height="44" viewBox="0 0 1 44">
+          <line x1="0.5" y1="0" x2="0.5" y2="44" stroke="rgba(10, 10, 10, 0.12)" strokeWidth="1" />
         </svg>
       </div>
     </section>
-  )
-}
-
-function StarField() {
-  const stars = Array.from({ length: 60 }, (_, i) => ({
-    id: i,
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-    size: Math.random() * 1.2 + 0.3,
-    opacity: Math.random() * 0.3 + 0.05,
-    delay: Math.random() * 5,
-  }))
-
-  return (
-    <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-      {stars.map(star => (
-        <div
-          key={star.id}
-          className="absolute rounded-full"
-          style={{
-            left: `${star.x}%`,
-            top: `${star.y}%`,
-            width: star.size,
-            height: star.size,
-            background: 'rgba(255, 250, 220, 0.9)',
-            opacity: star.opacity,
-            animation: `breathe ${4 + star.delay}s ease-in-out infinite`,
-            animationDelay: `${star.delay}s`,
-          }}
-        />
-      ))}
-    </div>
   )
 }
