@@ -76,10 +76,10 @@ export function DerKreis() {
               letterSpacing: '0.01em',
             }}
           >
-            Das Format heißt Zimbeln —<br />
-            eine Form des gemeinsamen Ausdrucks,<br />
-            geboren aus elektronischer Musik und dem Wunsch,<br />
-            beides zu verbinden: den Körper und das Stille.
+            Das Format heißt Zimbeln.<br />
+            Elektronische Musik, die aufbaut.<br />
+            Körper, die sich erinnern.<br />
+            Stille, die am Ende trägt.
           </p>
         </div>
 
@@ -122,8 +122,8 @@ export function DerKreis() {
               letterSpacing: '0.01em',
             }}
           >
-            Sie sind Symbol.<br />
-            Symbol der Verbindung, die der Kreis schafft.
+            Sie stehen zwischen Erde und Himmel.<br />
+            Die Menschen stehen um sie herum.
           </p>
         </div>
       </div>

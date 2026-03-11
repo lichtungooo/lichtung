@@ -3,7 +3,6 @@ export function Footer() {
     { label: 'Licht', href: '#das-licht' },
     { label: 'Kreis', href: '#der-kreis' },
     { label: 'Leuchten', href: '#entzuenden' },
-    { label: 'Kontakt', href: 'mailto:o@lichtung.art' },
   ]
 
   const handleNav = (href: string) => {
@@ -99,7 +98,7 @@ export function Footer() {
           }}
         >
           O ist ein Künstler aus Kassel.
-          Lichtung ist sein Werk — das erste seiner Art:
+          Lichtung ist eine konstruierte Situation —
           ein Kunstprojekt, das die Welt selbst zur Leinwand macht.
           Durch Teilnahme. Durch den Kreis.
           Durch das Leuchten, das entsteht,
@@ -109,8 +108,8 @@ export function Footer() {
         {/* Navigation */}
         <nav aria-label="Footer-Navigation">
           <ul
-            className="flex flex-wrap justify-center gap-x-8 gap-y-3 mb-10"
-            style={{ listStyle: 'none', padding: 0, margin: '0 0 2.5rem' }}
+            className="flex flex-wrap justify-center gap-x-8 gap-y-3"
+            style={{ listStyle: 'none', padding: 0, margin: '0 0 3.5rem' }}
           >
             {navLinks.map(link => (
               <li key={link.label}>
@@ -143,10 +142,65 @@ export function Footer() {
             letterSpacing: '0.22em',
             textTransform: 'uppercase',
             color: 'rgba(10, 10, 10, 0.18)',
+            marginBottom: '4rem',
           }}
         >
           documenta 16 · Kassel · 2027
         </p>
+
+        {/* Impressum */}
+        <div
+          style={{
+            borderTop: '1px solid rgba(0,0,0,0.06)',
+            paddingTop: '2.5rem',
+          }}
+        >
+          <p
+            style={{
+              fontFamily: 'Inter, sans-serif',
+              fontSize: '0.55rem',
+              fontWeight: 400,
+              letterSpacing: '0.28em',
+              textTransform: 'uppercase',
+              color: 'rgba(10, 10, 10, 0.2)',
+              marginBottom: '1rem',
+            }}
+          >
+            Impressum
+          </p>
+
+          <p
+            style={{
+              fontFamily: "'Cormorant Garamond', Georgia, serif",
+              fontSize: '1.6rem',
+              fontWeight: 300,
+              color: 'rgba(10, 10, 10, 0.35)',
+              letterSpacing: '0.15em',
+              marginBottom: '0.8rem',
+              lineHeight: 1,
+            }}
+          >
+            O
+          </p>
+
+          <a
+            href="mailto:o@lichtung.ooo"
+            style={{
+              fontFamily: 'Inter, sans-serif',
+              fontSize: '0.65rem',
+              fontWeight: 300,
+              letterSpacing: '0.1em',
+              color: 'rgba(10, 10, 10, 0.28)',
+              textDecoration: 'none',
+              transition: 'color 0.2s',
+            }}
+            onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(10, 10, 10, 0.65)' }}
+            onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(10, 10, 10, 0.28)' }}
+          >
+            o@lichtung.ooo
+          </a>
+        </div>
+
       </div>
     </footer>
   )

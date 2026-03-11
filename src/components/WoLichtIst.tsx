@@ -170,8 +170,8 @@ export function WoLichtIst() {
               letterSpacing: '0.01em',
             }}
           >
-            Eine Geschichte des Lichts — von der Erinnerung aller Völker,
-            vom Schatten, der kam, und von Mutter Erde, die wartet.
+            Alle Kulturen. Alle Völker. Dieselbe Erinnerung.<br />
+            Und Mutter Erde, die wartet.
           </p>
 
           {/* CTA button */}

@@ -71,8 +71,8 @@ export function Spende() {
               letterSpacing: '0.01em',
             }}
           >
-            Lichtung entsteht. Als Kunstprojekt,
-            als Gemeinschaft, als lebende Karte der Erde.
+            Lichtung entsteht.<br />
+            Als Gemeinschaft. Als lebende Karte der Erde.
           </p>
 
           <p
