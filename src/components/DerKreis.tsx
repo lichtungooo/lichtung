@@ -59,8 +59,9 @@ export function DerKreis() {
             }}
           >
             Ein Kreis von Menschen.<br />
-            Unter freiem Himmel oder in einem Raum.<br />
-            Musik, die aufbaut. Bewegung, die löst. Stille, die trägt.<br />
+            Unter freiem Himmel. Im Wald, am Wasser, in der Stadt.<br />
+            Musik, die aufbaut. Stille, die trägt.<br />
+            Verbundenheit, die entsteht.<br />
             Zwei Stunden. Ein Feld.
           </p>
 
@@ -108,7 +109,9 @@ export function DerKreis() {
             }}
           >
             In der Mitte des Kreises stehen Stäbe.<br />
-            Im Boden verankert. In den Himmel gerichtet.
+            Im Boden verankert. In den Himmel gerichtet.<br />
+            Auf ihnen stehen Worte:<br />
+            Liebe. Freiheit. Verbundenheit.
           </p>
 
           <p
@@ -120,10 +123,36 @@ export function DerKreis() {
               color: '#1A1A1A',
               lineHeight: 1.8,
               letterSpacing: '0.01em',
+              marginBottom: '5rem',
             }}
           >
             Sie stehen zwischen Erde und Himmel.<br />
             Die Menschen stehen um sie herum.
+          </p>
+
+          {/* Origin */}
+          <div
+            style={{
+              width: 1,
+              height: 32,
+              background: 'rgba(0,0,0,0.08)',
+              margin: '0 auto 2rem',
+            }}
+            aria-hidden="true"
+          />
+          <p
+            style={{
+              fontFamily: 'Inter, sans-serif',
+              fontSize: '0.62rem',
+              fontWeight: 300,
+              letterSpacing: '0.22em',
+              textTransform: 'uppercase',
+              color: 'rgba(0,0,0,0.22)',
+              lineHeight: 2,
+            }}
+          >
+            Die erste Lichtung<br />
+            Kassel · Ein Hektar Wald · Eine Quelle
           </p>
         </div>
       </div>
